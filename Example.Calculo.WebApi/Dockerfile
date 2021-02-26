@@ -5,8 +5,7 @@
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:2.1 AS base
 WORKDIR /app
-EXPOSE 60333
-EXPOSE 6000
+EXPOSE 80
 
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1 AS build
 WORKDIR /src
