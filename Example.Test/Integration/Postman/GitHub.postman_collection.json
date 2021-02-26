@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "7788c49f-b629-4d03-a603-868a1d301dd8",
+		"name": "GitHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "WebAPI Taxa",
+			"item": [
+				{
+					"name": "Taxa Juros",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//First Test Case\r",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{taxa_host}}/taxaJuros",
+							"host": [
+								"{{taxa_host}}"
+							],
+							"path": [
+								"taxaJuros"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WebAPI Cálculo",
+			"item": [
+				{
+					"name": "Calcula Juros",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//First Test Case\r",
+									"tests[\"Status code is 200\"] = responseCode.code === 200;\r",
+									"\r",
+									"//Second Test Case\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(jsonData);\r",
+									"tests[\"Response should have valorFinal as 105.1\"] = jsonData.data.valorFinal === 105.1;\r",
+									"\r",
+									"tests[\"Response should have jurosCalculado as 5.1\"] = jsonData.data.jurosCalculado === 5.1;"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{calculo_host}}/calculajuros/{{valorInicial}}/{{meses}}",
+							"host": [
+								"{{calculo_host}}"
+							],
+							"path": [
+								"calculajuros",
+								"{{valorInicial}}",
+								"{{meses}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show me the code",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{calculo_host}}/showmethecode",
+							"host": [
+								"{{calculo_host}}"
+							],
+							"path": [
+								"showmethecode"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
