@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  example.calculo.webapi:
+    image: ${DOCKER_REGISTRY-}examplecalculowebapi
+    build:
+      context: .
+      dockerfile: Example.Calculo.WebApi/Dockerfile
+
+  example.taxa.webapi:
+    image: ${DOCKER_REGISTRY-}exampletaxawebapi
+    build:
+      context: .
+      dockerfile: Example.Taxa.WebApi/Dockerfile
+
