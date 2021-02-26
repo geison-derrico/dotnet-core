@@ -12,6 +12,8 @@
 
 2. Configurada para ser executada via publicação em container docker.
 
+3. Neste projeto foi utilizado o conceito de feature do git flow: https://danielkummer.github.io/git-flow-cheatsheet/index.pt_BR.html
+
 ---
 
 Para rodar as APIs publicadas em containers docker, execute os comandos abaixo:
